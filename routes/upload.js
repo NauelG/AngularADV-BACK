@@ -87,7 +87,8 @@ function subirPorTipo(tipo, id, nombreArchivo, res) {
             var pathViejo = './uploads/usuarios/' + usuario.img;
 
             if (fs.existsSync(pathViejo)) {
-                fs.unlink(pathViejo);
+                fs.unlink(pathViejo, () => {
+                });
             }
 
             usuario.img = nombreArchivo;
